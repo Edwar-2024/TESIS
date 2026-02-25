@@ -14,6 +14,7 @@ Original file is located at
 # 3️⃣ Inicializar variables de sesión del alumno.
 # 4️⃣ Definir el diccionario TEMAS con niveles, descripción y ejercicios de referencia.
 
+from backend import orquestador_manager, orquestador_pedagogico
 import streamlit as st
 
 # -------------------------------------------------
