@@ -34,16 +34,10 @@ Original file is located at
 # =========================================
 
 # Importa la librería estándar de Python para manejar variables de entorno
-import os
-
 # Abre el archivo de texto donde guardaste tu API Key
 # IMPORTANTE: el archivo solo contiene la clave, nada más
-with open("/content/api_key.txt", "r") as archivo:
-    api_key = archivo.read().strip()
-
-# Guarda la API Key como variable de entorno
-# LangChain y OpenAI la leerán automáticamente desde aquí
-os.environ["OPENAI_API_KEY"] = api_key
+import os
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Importaciones principales (MODERNAS, NO DEPRECADAS)
 # Modelo de lenguaje GPT a usar
