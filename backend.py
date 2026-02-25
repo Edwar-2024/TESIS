@@ -12,22 +12,22 @@ Original file is located at
 # ================================
 
 # Instala el núcleo moderno de LangChain (prompts, mensajes, tools, runnables)
-!pip install -q langchain-core
+# !pip install -q langchain-core    ## esto solo funciona en colab
 
 # Instala la integración oficial con modelos OpenAI (GPT)
-!pip install -q langchain-openai
+#!pip install -q langchain-openai
 
 # Instala componentes comunitarios (conectores, utilidades opcionales)
-!pip install -q langchain-community
+#!pip install -q langchain-community
 
 # Instala LangGraph (base moderna para agentes; NO usaremos create_react_agent deprecated)
-!pip install -q langgraph
+#!pip install -q langgraph
 
 # Driver PostgreSQL para Python (conexión directa a Postgres)
-!pip install -q psycopg2-binary
+#!pip install -q psycopg2-binary
 
 # Para exponer el backend en Colab
-!pip install -q fastapi uvicorn nest_asyncio pyngrok
+#!pip install -q fastapi uvicorn nest_asyncio pyngrok
 
 # =========================================
 # CELDA 2: CONFIGURACIÓN DE LA API DE OPENAI
