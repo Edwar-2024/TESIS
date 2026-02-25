@@ -1,3 +1,7 @@
 streamlit
 openai
+langchain-core
+langchain-openai
+langchain-community
+langgraph
 psycopg2-binary
