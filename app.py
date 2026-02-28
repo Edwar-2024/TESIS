@@ -250,3 +250,42 @@ else:
     st.write(f"**Tema actual:** {st.session_state.tema_actual}")
     st.write(f"**Nivel actual:** {st.session_state.nivel_actual}")
 
+
+
+    ##### CELDA 3: GENERACIÓN DEL PRIMER EJERCICIO DESDE EL BACKEND #######
+
+    # -------------------------------------------------
+    # Inicialización del ejercicio actual en sesión
+    # -------------------------------------------------
+    if "ejercicio_id_actual" not in st.session_state:
+        st.session_state.ejercicio_id_actual = None
+    
+    if "enunciado_actual" not in st.session_state:
+        st.session_state.enunciado_actual = None
+    
+    # -------------------------------------------------
+    # Generar primer ejercicio solo si no existe aún
+    # -------------------------------------------------
+    if st.session_state.ejercicio_id_actual is None:
+    
+        with st.spinner("Generando ejercicio adaptativo..."):
+    
+            resultado = orquestador_manager(
+                alumno_id=st.session_state.alumno_id,
+                tema=st.session_state.tema_actual,
+                edad=st.session_state.edad,
+                actividad=st.session_state.actividad
+            )
+    
+            st.session_state.ejercicio_id_actual = resultado["ejercicio_id"]
+            st.session_state.enunciado_actual = resultado["enunciado"]
+    
+    # -------------------------------------------------
+    # Mostrar ejercicio actual
+    # -------------------------------------------------
+    if st.session_state.enunciado_actual:
+    
+        st.subheader("📘 Enunciado del ejercicio")
+        st.write(st.session_state.enunciado_actual) 
+
+
