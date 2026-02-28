@@ -15,7 +15,20 @@ Original file is located at
 # 4️⃣ Definir el diccionario TEMAS con niveles, descripción y ejercicios de referencia.
 
 from backend import orquestador_manager, orquestador_pedagogico
+import os
 import streamlit as st
+
+# -------------------------------------------------
+# Cargar API Key desde Streamlit Secrets
+# -------------------------------------------------
+api_key = st.secrets.get("OPENAI_API_KEY")
+
+if api_key:
+    os.environ["OPENAI_API_KEY"] = api_key
+else:
+    st.error("No se encontró OPENAI_API_KEY en secrets.")
+
+
 
 # -------------------------------------------------
 # Configuración inicial de la página
